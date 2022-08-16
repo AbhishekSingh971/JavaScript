@@ -1,0 +1,16 @@
+z = Math;
+z = Math.PI;
+z = Math.E;
+z = Math.round(5.4);
+z = Math.ceil(5.3);
+z = Math.floor(-5.3);
+z = Math.abs(5);
+z = Math.sqrt(64);
+z = Math.pow(2,3);
+z = Math.min(2,3,32,234,-34);
+z = Math.max(2,3,34,235,34);
+z = Math.random();
+z = 100*Math.random();
+z = 50 + (100-50)*Math.random();
+z = Math.ceil(50 + (100-50)*Math.random());
+console.log(z);

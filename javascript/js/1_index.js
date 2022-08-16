@@ -1,0 +1,13 @@
+console.time('your time took');
+console.log('hello console');
+console.log(34+5);
+console.log(45);
+console.log(true);
+console.log([23,34,54]);
+console.log({apple:'Red', weight:11});
+console.table({apple: 'Red', weight:11});
+console.warn('This is a warning');
+// console.clear();
+console.timeEnd('your time took');
+console.assert(565<189, 'Age > 189 is not possible');
+console.error('This is an error');
