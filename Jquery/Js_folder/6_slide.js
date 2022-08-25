@@ -1,0 +1,11 @@
+$(document).ready(function(){
+    $("#1h").click(function(){
+        $('#div1').slideUp(1000)
+    })
+    $("#2h").click(function(){
+        $('#div1').slideDown(1000)
+    })
+    $("#3h").click(function(){
+        $('#div1').slideToggle(2000)
+    })
+})
