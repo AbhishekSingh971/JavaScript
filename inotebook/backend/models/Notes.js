@@ -1,4 +1,8 @@
+// this is for import from mongoose
 const mongoose = require('mongoose');
+// this is also for import from mongoose
+// import mongoose from 'mongoose';
+
 
 const NotesSchema = new Schema({
     title:{
@@ -19,4 +23,7 @@ const NotesSchema = new Schema({
     }
 })
 
+//this is for export
 module.exports = mongoose.model('notes',NotesSchema);
+//another way
+// export default mongoose.model('notes', NotesSchema)

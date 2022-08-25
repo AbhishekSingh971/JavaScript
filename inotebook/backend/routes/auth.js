@@ -1,11 +1,9 @@
 const express = require('express')
 const router = express.Router()
 router.get('/', (req, res) => {
-    obj = {
-        a: 'thios',
-        number: 34,
-    }
-    res.json(obj)
+    //if you want to use req.body in line 5, than you have to use middel wayer in index.js
+    console.log(req.body);
+    res.send('hello auth')
   })
 
   module.exports = router
