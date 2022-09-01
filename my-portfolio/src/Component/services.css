@@ -1,0 +1,159 @@
+.para-1{
+  line-height: 2;
+  height: 758px;
+  background-color: indigo;
+  text-align: justify;
+  color: white;
+  padding-top: 140px;
+}
+.para-2{
+  line-height: 2;
+  height: 750px;
+  background-color: Moccasin;
+  text-align: justify;
+  color: black;
+  padding-top: 230px;
+}
+.para-3{
+  line-height: 2;
+  height: 750px;
+  background-color: Teal;
+  text-align: justify;
+  color: white;
+  padding-top: 230px;
+}
+.para-4{
+  line-height: 2;
+  height: 700px;
+  background-color: LightSteelBlue;
+  text-align: justify;
+  color: black;
+  padding-top: 150px;
+}
+.para-5{
+  line-height: 2;
+  height: 700px;
+  background-color: MidnightBlue;
+  text-align: justify;
+  color: white;
+  padding-top: 170px;
+}
+.para-6{
+  line-height: 2;
+  height: 700px;
+  background-color: LightGray;
+  text-align: justify;
+  color: black;
+  padding-top: 140px;
+}
+
+@media screen and (max-width: 900px){
+  .para-1{
+  height: 750px;
+  padding-top: 100px;
+  }
+  .para-2{
+  height: 500px;
+  padding-top: 80px;
+  }
+  .para-3{
+  height: 550px;
+  padding-top: 80px;
+  }
+  .para-4{
+  height: 700px;
+  padding-top: 80px;
+  }
+  .para-5{
+  height: 550px;
+  padding-top: 80px;
+  }
+  .para-6{
+  height: 780px;
+  padding-top: 50px;
+  }
+}
+
+
+@media screen and (max-width: 700px){
+  .para-1{
+  height: 800px;
+  padding-top: 100px;
+  }
+  .para-2{
+  height: 580px;
+  padding-top: 80px;
+  }
+  .para-3{
+  height: 600px;
+  padding-top: 80px;
+  }
+  .para-4{
+  height: 650px;
+  padding-top: 80px;
+  }
+  .para-5{
+  height: 550px;
+  padding-top: 80px;
+  }
+  .para-6{
+  height: 830px;
+  padding-top: 50px;
+  }
+}
+
+
+@media screen and (max-width: 470px){
+  .para-1{
+  height: 1050px;
+  padding-top: 70px;
+  }
+  .para-2{
+  height: 650px;
+  padding-top: 30px;
+  }
+  .para-3{
+  height: 750px;
+  padding-top: 30px;
+  }
+  .para-4{
+  height: 750px;
+  padding-top: 30px;
+  }
+  .para-5{
+  height: 600px;
+  padding-top: 30px;
+  }
+  .para-6{
+  height: 1050px;
+  padding-top: 30px;
+  }
+}
+
+
+@media screen and (max-width: 320px){
+  .para-1{
+  height: 1200px;
+  padding-top: 70px;
+  }
+  .para-2{
+  height: 750px;
+  padding-top: 30px;
+  }
+  .para-3{
+  height: 850px;
+  padding-top: 30px;
+  }
+  .para-4{
+  height: 850px;
+  padding-top: 30px;
+  }
+  .para-5{
+  height: 660px;
+  padding-top: 30px;
+  }
+  .para-6{
+  height: 1300px;
+  padding-top: 30px;
+  }
+}
