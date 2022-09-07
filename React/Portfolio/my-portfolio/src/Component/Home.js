@@ -1,4 +1,5 @@
 import React from "react-dom";
+import img from "./download.jpg";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           paddingLeft: 50,
         }}
       >
+        <img src={img} className="float-end"/>
         <h5 className="h5 text-light">Hi,I'm Abhishek Singh</h5>
         <h2 className="h2 text-light">I build value through design.</h2>
         <span className="text-light">
@@ -26,9 +28,7 @@ export default function Home() {
         </a>
       </div>
       <div className="mt-3" style={{ paddingLeft: 50 }}>
-        <h1 className="h1 text-light">
-          What I do
-        </h1>
+        <h1 className="h1 text-light">What I do</h1>
         <a className="link text-warning" href="/">
           Learn more
         </a>
