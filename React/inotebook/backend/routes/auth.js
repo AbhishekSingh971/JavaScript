@@ -13,44 +13,42 @@ const JWT_SECRET = 'Thisis$token';
 router.post(
   "/createuser",
   [
-    body("name", "Enter the valid name").isLength({ min: 4 }),
+    body("name", "Enter the valid name").isLength({ min: 3 }),
     body("email", "Enter the valid email").isEmail(),
-    body("password", "password must contain minimum 8 character").isLength({
-      min: 8,
-      max: 16,
-    }),
-  ],
-   async (req, res) => {
+    body("password", "password must contain minimum 5 character").isLength({
+      min: 5}),
+  ],async (req, res) => {
+    let success = false;
     // if there are errors , return Bad request and the errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({success, errors: errors.array() });
     }
     try{//idealy we don/t use try and catch ,we put it in Logger or SQS 
       // Check whether the user with this email exist already
+      let user = await User.findOne({email: req.body.email});
+      if(user){
+        return res.status(400).json({success, error: "Sorry a user with this email already exist"});
+      }
       const salt =await bcrypt.genSalt(10);
       secPass = await bcrypt.hash(req.body.password, salt)
 
        // Create a new User
        user = await User.create({
         name: req.body.name,
-        email: req.body.email,
         password: secPass,
+        email: req.body.email,
       });
       const data = {
         user: {id: user.id}
       }
 
       const authtoken = jwt.sign(data, JWT_SECRET);
-      console.log(jwtData);
+      // console.log(jwtData);
 
         // res.json(user)
-        res.json({authtoken});
-      
-      let user = user.findOne({email: req.body.email});
-      if(user){
-        return res.status(400).json({error: "Sorry a user with this email already exist"});
-      }
+        success = true;
+        res.json({success, authtoken});
   
 }catch(error){
   console.error(error.message)
@@ -68,6 +66,7 @@ router.post(
     body("email", "Enter the valid email").isEmail(),
     body("password", "password Cannot be block").exists()
   ],async (req, res) => {
+    let success = false;
 
     // if there are errors , return Bad request and the errors
     const errors = validationResult(req);
@@ -79,19 +78,23 @@ router.post(
     try{
       let user = await User.findOne({email});
       if(!user){
-        return res.status(400).json({error: "please try to login with correct credentials"});
+        success = false;
+        return res.status(400).json({success, error: "please try to login with correct credentials"});
       }
       
       const passwordComapare =await bcrypt.compare(password, user.password);
       if(!passwordComapare){
-        return res.status(400).json({error: "please try to login with correct credentials"});
+        success = false;
+        return res.status(400).json({success, error: "please try to login with correct credentials"});
       }
 
       const data = {
         user: {id: user.id}
       }
+
+      success = true;
       const authtoken = jwt.sign(data, JWT_SECRET);
-      res.json({authtoken});
+      res.json({ success, authtoken});
 
     }catch(error){
       console.error(error.message)
