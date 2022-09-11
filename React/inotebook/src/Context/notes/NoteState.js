@@ -14,9 +14,8 @@ const NoteState = (props) => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMxMTgyNDA1MjRiNTRlZGIxOGNkOTNlIn0sImlhdCI6MTY2MjQ2ODMwMX0.CRQDRHdEqGlF9mLzN7GHPV2KbJuEAGaCINlLMEAZCeg",
-      },
+        "auth-token":localStorage.getItem('token')   
+         },
     });
     const json = await response.json();
     console.log(json);
@@ -30,9 +29,8 @@ const NoteState = (props) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMxMTgyNDA1MjRiNTRlZGIxOGNkOTNlIn0sImlhdCI6MTY2MjQ2ODMwMX0.CRQDRHdEqGlF9mLzN7GHPV2KbJuEAGaCINlLMEAZCeg",
-      },
+        "auth-token":localStorage.getItem('token')   
+         },
       body: JSON.stringify({ title, description, tag }),
     });
     const note = await response.json();
@@ -48,11 +46,11 @@ const NoteState = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMxMTgyNDA1MjRiNTRlZGIxOGNkOTNlIn0sImlhdCI6MTY2MjQ2ODMwMX0.CRQDRHdEqGlF9mLzN7GHPV2KbJuEAGaCINlLMEAZCeg",
-      },
+        "auth-token":localStorage.getItem('token')   
+         },
     });
     const json = response.json();
+    console.log(json);
 
     // console.log("Deleting the note with id "+ id)
     const newNotes = notes.filter((note) => {
@@ -70,9 +68,8 @@ const NoteState = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjMxMTgyNDA1MjRiNTRlZGIxOGNkOTNlIn0sImlhdCI6MTY2MjQ2ODMwMX0.CRQDRHdEqGlF9mLzN7GHPV2KbJuEAGaCINlLMEAZCeg",
-      },
+        "auth-token":localStorage.getItem('token')   
+         },
       body: JSON.stringify({ title, description, tag }),
     });
     const json =await response.json();

@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const Signup = () => {
+const Signup = (props) => {
     const [credentials, setCredentials] = useState({name: "",email:"",password:"",cpassword: ""});
     let history = useHistory();
 
@@ -22,9 +22,10 @@ const Signup = () => {
             // Save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             history.push("/");
+            props.showAlert("Account Created Succsessfully", "success");
           }
           else{
-            alert("Invalid credentials")
+            props.showAlert("Invalid Credentials", "danger");
           }
     }
 
@@ -33,7 +34,8 @@ const Signup = () => {
     }
 
     return (
-        <div className='container text-light'>
+        <div className='container text-light mt-2'>
+            <h2 className='my-3'>Create an account to iNotebook</h2>
             <form onSubmit={handleSubmit}>
                 <div  className="mb-3">
                     <label htmlFor="name"  className="form-label">Name</label>
