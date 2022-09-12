@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar(){
+  const location = useLocation();
     return (
         <nav className="navbar navbar-dark fixed-top navbar-expand-sm bg-dark mb-3">
   <div className="container-fluid">
@@ -12,22 +13,22 @@ function Navbar(){
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link" aria-current="page" to="/">Home</Link>
+          <Link className={`nav-link ${location.pathname === "/"?"active":""}`} to="/">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/project">Project's</Link>
+          <Link className={`nav-link ${location.pathname === "/project"?'active':""}`} to="/project">Project's</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/skills">Skills</Link>
+          <Link className={`nav-link ${location.pathname === "/skills"?'active':""}`} to="/skills">Skills</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/services">Services</Link>
+          <Link className={`nav-link ${location.pathname === "/services"?'active':""}`} to="/services">Services</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">About</Link>
+          <Link className={`nav-link ${location.pathname === "/about"?'active':""}`} to="/about">About</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/contact">Contact</Link>
+          <Link className={`nav-link ${location.pathname === "/contact"?'active':""}`} to="/contact">Contact</Link>
         </li>
       </ul>
     </div>
