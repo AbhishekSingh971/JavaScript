@@ -36,3 +36,7 @@ button:hover{
     padding:23px;
     border-radius: 50px;
 }
+
+.heading{
+    font-family:'Times New Roman', Times, serif;
+}

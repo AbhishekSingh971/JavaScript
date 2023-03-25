@@ -8,11 +8,11 @@ for(item of buttons){
         if(buttonText == 'X'){
             buttonText = '*';
             screenValue += buttonText;
-            screen.Value = screenValue;
+            screen.value = screenValue;
         }
         else if( buttonText == 'C'){
             screenValue = "";
-            screen.Value = screenValue;
+            screen.value = screenValue;
         }
         else if( buttonText == '='){
             screen.value = eval(screenValue);
